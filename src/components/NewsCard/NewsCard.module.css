@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.preview img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #444444;
+}

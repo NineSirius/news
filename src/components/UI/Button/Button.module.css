@@ -1,0 +1,24 @@
+.btn {
+    align-self: center;
+    padding: 10px 30px;
+    border: unset;
+    background: #fff;
+    border-radius: 5px;
+    color: #333;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #46aeae;
+}
+
+.success {
+    background: green !important;
+    color: #fff;
+}
+
+.success:hover {
+    background: #075c07 !important;
+}
