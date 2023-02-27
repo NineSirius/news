@@ -2,7 +2,7 @@ import { FaClock, FaEye } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styles from './NewsCard.module.css'
 
-export const NewsCard = ({ title, desc, time, prevImage, views }) => {
+export const NewsCard = ({ title, desc, time, prevImage, views, id }) => {
     return (
         <div className={styles.card}>
             <div className={styles.preview}>
@@ -22,7 +22,7 @@ export const NewsCard = ({ title, desc, time, prevImage, views }) => {
             <h2 className={styles.title}>{title}</h2>
 
             <p className={styles.desc}>{desc}</p>
-            <Link to="/">Подробнее</Link>
+            <Link to={'posts/' + id}>Подробнее</Link>
         </div>
     )
 }

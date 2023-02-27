@@ -1,19 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NewsCard } from '../../components/NewsCard'
+
+import { getPosts } from '../../api/request'
 
 import styles from './NewsList.module.css'
 
 export const NewsList = () => {
-    const [newsList, setNewsList] = useState([
-        {
-            title: 'This red card it`s Ferrari :D',
-            shortDesc: 'I don`t know what can say about this car',
-            views: 0,
-            prevImage:
-                'https://cdn.ferrari.com/cms/network/media/img/resize/5d26fdb7c3f9ec0af6475619-01_fb_ppl_intro_lp3lhwq8?width=1080',
-            time: '27.02.2023',
-        },
-    ])
+    useEffect(() => {
+        getPosts().then((data) => {
+            setNewsList(
+                Object.keys(data).map((key) => {
+                    return {
+                        ...data[key],
+                        id: key,
+                    }
+                }),
+            )
+        })
+    }, [])
+
+    const [newsList, setNewsList] = useState([])
 
     return (
         <>
@@ -21,11 +27,13 @@ export const NewsList = () => {
                 {newsList.map((newsItem) => {
                     return (
                         <NewsCard
+                            key={newsItem.id}
                             title={newsItem.title}
                             desc={newsItem.shortDesc}
-                            prevImage={newsItem.prevImage}
-                            views={newsItem.views}
                             time={newsItem.time}
+                            prevImage={newsItem.prevImg}
+                            views={newsItem.views || 0}
+                            id={newsItem.id}
                         />
                     )
                 })}

@@ -10,7 +10,7 @@ export const AddPostForm = () => {
         title: '',
         shortDesc: '',
         fullDesc: '',
-        previewImg: '',
+        previImg: '',
     })
 
     const [show, setShow] = useState(false)
@@ -25,7 +25,9 @@ export const AddPostForm = () => {
 
     const submit = (e) => {
         e.preventDefault()
-        setPosts(postInfo)
+        setPosts(postInfo).finally(() => {
+            setShow(true)
+        })
     }
 
     return (
@@ -72,7 +74,7 @@ export const AddPostForm = () => {
                         <input
                             className={styles.input}
                             type="text"
-                            name="previewImg"
+                            name="prevImg"
                             onChange={change}
                             required
                         />
@@ -82,7 +84,9 @@ export const AddPostForm = () => {
 
                 <Notify show={show}>Пост опубликован!</Notify>
 
-                <Button type="success">{t('publicate')}</Button>
+                <Button type="success" disabled={show}>
+                    {t('publicate')}
+                </Button>
             </div>
         </form>
     )
