@@ -16,6 +16,8 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
     color: #333;
     text-decoration: none;
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { setPosts } from '../../api/request'
+import { PostPage } from '../../components/PostPage'
 import { Button } from '../../components/UI/Button'
 import { Notify } from '../../components/UI/Notify'
 import styles from './AddPostForm.module.css'
@@ -31,63 +32,74 @@ export const AddPostForm = () => {
     }
 
     return (
-        <form onSubmit={submit}>
-            <div className={styles.form}>
-                <label>
-                    <div className={styles.formItem}>
-                        <input
-                            className={styles.input}
-                            type="text"
-                            name="title"
-                            onChange={change}
-                            required
-                        />
-                        <span className={styles.formItemTitle}>{t('post_title')}</span>
-                    </div>
-                </label>
-                <label>
-                    <div className={styles.formItem}>
-                        <input
-                            type="text"
-                            name="shortDesc"
-                            onChange={change}
-                            className={styles.input}
-                            required
-                        />
-                        <span className={styles.formItemTitle}>{t('post_shortDesc')}</span>
-                    </div>
-                </label>
-                <label>
-                    <div className={styles.formItem} contenteditable>
-                        <textarea
-                            className={styles.input}
-                            type="text"
-                            name="fullDesc"
-                            onChange={change}
-                            required
-                        ></textarea>
-                        <span className={styles.formItemTitle}>{t('post_fullDesc')}</span>
-                    </div>
-                </label>
-                <label>
-                    <div className={styles.formItem}>
-                        <input
-                            className={styles.input}
-                            type="text"
-                            name="prevImg"
-                            onChange={change}
-                            required
-                        />
-                        <span className={styles.formItemTitle}>{t('post_previewImg')}</span>
-                    </div>
-                </label>
+        <div className={styles.addPostForm}>
+            {/* <div className={styles.previewForm}>
+                <h4 className={styles.title}>Предпросмотр поста</h4>
+                <PostPage
+                    img={postInfo.previImg}
+                    title={postInfo.title}
+                    shortDesc={postInfo.shortDesc}
+                    fullDesc={postInfo.fullDesc}
+                />
+            </div> */}
+            <form onSubmit={submit}>
+                <div className={styles.form}>
+                    <label>
+                        <div className={styles.formItem}>
+                            <input
+                                className={styles.input}
+                                type="text"
+                                name="title"
+                                onChange={change}
+                                required
+                            />
+                            <span className={styles.formItemTitle}>{t('post_title')}</span>
+                        </div>
+                    </label>
+                    <label>
+                        <div className={styles.formItem}>
+                            <input
+                                type="text"
+                                name="shortDesc"
+                                onChange={change}
+                                className={styles.input}
+                                required
+                            />
+                            <span className={styles.formItemTitle}>{t('post_shortDesc')}</span>
+                        </div>
+                    </label>
+                    <label>
+                        <div className={styles.formItem} contenteditable>
+                            <textarea
+                                className={styles.input}
+                                type="text"
+                                name="fullDesc"
+                                onChange={change}
+                                required
+                            ></textarea>
+                            <span className={styles.formItemTitle}>{t('post_fullDesc')}</span>
+                        </div>
+                    </label>
+                    <label>
+                        <div className={styles.formItem}>
+                            <input
+                                className={styles.input}
+                                type="text"
+                                name="prevImg"
+                                onChange={change}
+                                required
+                            />
+                            <span className={styles.formItemTitle}>{t('post_previewImg')}</span>
+                        </div>
+                    </label>
 
-                <Notify show={show}>Пост опубликован!</Notify>
+                    <Notify show={show}>Пост опубликован!</Notify>
 
-                <Button type="success" disabled={show}>
-                    {t('publicate')}
-                </Button>
-            </div>
-        </form>
+                    <Button type="success" disabled={show}>
+                        {t('publicate')}
+                    </Button>
+                </div>
+            </form>
+        </div>
     )
 }

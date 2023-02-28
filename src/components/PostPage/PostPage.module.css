@@ -1,0 +1,19 @@
+.post {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.postPreview img {
+    width: 100%;
+    display: block;
+}
+
+.postInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    text-align: center;
+}

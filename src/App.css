@@ -21,3 +21,8 @@ body {
     text-align: center;
     font-size: 32px;
 }
+
+p {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+}

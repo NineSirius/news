@@ -29,9 +29,11 @@ export const ChangeLang = () => {
         <select onChange={handleLangChange}>
             <option value="ru" name="ru" selected={language === 'ru'}>
                 Русский
+                <img src="ru-flag.webp" alt="Russian" />
             </option>
             <option value="en" name="en" selected={language === 'en'}>
                 English
+                <img src="en-flag.webp" alt="English" />
             </option>
         </select>
     )
