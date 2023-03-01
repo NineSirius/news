@@ -26,3 +26,28 @@
     background: #333;
     color: #fff;
 }
+
+@media (max-width: 460px) {
+    .header {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        border-top: 2px solid lightgray;
+        justify-content: center;
+        background: #f2f2f2;
+    }
+
+    .nav {
+        align-self: center;
+    }
+
+    .link {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        display: none;
+    }
+}

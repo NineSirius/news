@@ -9,7 +9,7 @@ export const Navigation = () => {
 
     return (
         <header className={styles.header}>
-            <div>Logo</div>
+            <div className={styles.logo}>Logo</div>
             <nav className={styles.nav}>
                 <CustomLink to="/" icon={<FaHome />}>
                     {t('home_page')}
